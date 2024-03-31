@@ -1,0 +1,123 @@
+body{
+    height: 600px;
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+} 
+ body > div{
+    margin: auto;
+}
+
+.btn{
+    display:inline-block;
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    min-width: 120px;
+    transition: opacity 0.2s ease;
+    text-align: center;
+}
+.btn:hover{
+    opacity: 0.6;
+}
+.btn--success{
+    background-color: rgb(120, 222, 18);
+}
+.btn--warn{
+    background-color: yellow;
+}
+.btn--danger{
+    background-color: red;
+}
+.btn + .btn{
+    margin-left: 16px;
+}
+.btn--disable{
+    opacity: 0.4 !important;
+    cursor: default;
+}
+.btn--size-s{
+    padding: 12px 32px;
+}
+.btn--size-l{
+    padding: 16px 56px;
+}
+.toast{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #f7f7f7d8;
+    border-radius: 2px;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 5px solid #000;
+    box-shadow: 1px 5px 8px rgba(0, 0 , 0, 0.1); 
+    transition: all linear 0.3s;
+}
+@keyframes slideInLeft{
+    from{
+        transform: translateX(calc(100% + 32px));
+        opacity: 0;
+    }to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes fadeOut{
+    to{
+        opacity: 0;
+    }
+}
+.toast__icon,
+.toast__close{
+    padding: 0 16px;
+    font-size: 24px;
+}
+.toast + .toast{
+    margin-top: 24px;
+}
+.toast__body{
+    flex-grow: 1;
+}
+.toast__title{
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+.toast__msg{
+}
+.toast__close{
+    color: rgba(0, 0 , 0, 0.4);
+    cursor: pointer;
+}
+
+.toast--success{
+    border-color: aquamarine;
+}
+.toast--success .toast__icon{
+    color: aquamarine;
+
+}
+.toast--info{
+    border-color:#3477da ;
+}
+.toast--info .toast__icon{
+    color:#3477da ;
+}
+.toast--warning{
+    border-color: coral;
+}
+.toast--warning .toast__icon{
+    color: coral;
+}
+
+#toast{
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 1;
+}
